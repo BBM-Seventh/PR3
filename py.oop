@@ -1,0 +1,71 @@
+class Message:
+    def __init__(self, content):
+        self.content = content
+
+class A(Message):
+    def __init__(self):
+        super().__init__("Alice")
+
+class B(Message):
+    def __init__(self):
+        super().__init__("Bob")
+
+class P(Message):
+    def __init__(self):
+        super().__init__("Piter")
+
+class C(Message):
+    def __init__(self):
+        super().__init__("Chloe")
+
+class D(Message):
+    def __init__(self):
+        super().__init__("David")
+
+class E(Message):
+    def __init__(self):
+        super().__init__("Emily")
+
+class F(Message):
+    def __init__(self):
+        super().__init__("Frank")
+
+class MessageHandler:
+    @staticmethod
+    def handle_message(obj):
+        if isinstance(obj, A):
+            return "Class A message: " + obj.content
+        elif isinstance(obj, B):
+            return "Class B message: " + obj.content
+        elif isinstance(obj, P):
+            return "Class P message: " + obj.content
+        elif isinstance(obj, C):
+            return "Class C message: " + obj.content
+        elif isinstance(obj, D):
+            return "Class D message: " + obj.content
+        elif isinstance(obj, E):
+            return "Class E message: " + obj.content
+        elif isinstance(obj, F):
+            return "Class F message: " + obj.content
+        else:
+            return "Unknown class"
+
+
+a = A()
+b = B()
+p = P()
+c = C()
+d = D()
+e = E()
+f = F()
+
+
+handler = MessageHandler()
+
+print(handler.handle_message(a))
+print(handler.handle_message(b))
+print(handler.handle_message(p))
+print(handler.handle_message(c))
+print(handler.handle_message(d))
+print(handler.handle_message(e))
+print(handler.handle_message(f))
